@@ -1,14 +1,17 @@
 #include "Style.h"
 
-void Draw_Kpi_pp(){
+void Draw_Kpi_pAu(){
 
-	TFile *infile = new TFile("Run15pp200_hadron_cocktail_input_v20190224.root","read");
-	TFile *infile1 = new TFile("runcuts_Run15pp200_COMBINED_QGSP_BERT_TIGHT.root","read");
-	TFile *infile2 = new TFile("runcuts_Run15pp200_COMBINED_FTFP_BERT_TIGHT.root","read");
+	TFile *infile = new TFile("dAu200_kpi_ratio_chg_func.root","read");
+	TFile *infile1 = new TFile("runcuts_Run15pAu200_COMBINED_QGSP_BERT_TIGHT.root","read");
+	TFile *infile2 = new TFile("runcuts_Run15pAu200_COMBINED_FTFP_BERT_TIGHT.root","read");
 	TFile *infile3 = new TFile("runcuts_Run15pp200_COMBINED_QGSP_BIC_TIGHT.root","read");
 
-	TH1D *hPT_PION[2][4];
-	TH1D *hPT_KAON[2][4];
+	TH1D *hPT_KPI[2][2]; //[arm][chg]
+	hPT_KPI[0][0] = (TH1D*)infile->Get("hkpi_r_dAu_chg0_etabin06");
+	hPT_KPI[0][1] = (TH1D*)infile->Get("hkpi_r_dAu_chg1_etabin06");
+	hPT_KPI[1][0] = (TH1D*)infile->Get("hkpi_r_dAu_chg0_etabin23");
+	hPT_KPI[1][1] = (TH1D*)infile->Get("hkpi_r_dAu_chg1_etabin23");
 
 	TH1D *hreco1_PION[2][2][2]; //[arm][gap][chg]
 	TH1D *hreco1_KAON[2][2][2]; //[arm][gap][chg]
@@ -16,22 +19,6 @@ void Draw_Kpi_pp(){
 	TH1D *hreco2_KAON[2][2][2]; //[arm][gap][chg]
 	TH1D *hreco3_PION[2][2][2]; //[arm][gap][chg]
 	TH1D *hreco3_KAON[2][2][2]; //[arm][gap][chg]
-
-	for (int ichg=0; ichg<2; ichg++){
-		for (int ieta=0; ieta<4; ieta++){
-			hPT_PION[ichg][ieta] = (TH1D*)infile->Get(Form("PT1_PION_CHG%d_ETA%d",ichg,15+2*ieta));
-			hPT_KAON[ichg][ieta] = (TH1D*)infile->Get(Form("PT1_KAON_CHG%d_ETA%d",ichg,15+2*ieta));
-
-			if ( ieta>0 ){
-				hPT_PION[ichg][0]->Add(hPT_PION[ichg][ieta]);
-				hPT_KAON[ichg][0]->Add(hPT_KAON[ichg][ieta]);
-			}
-		}
-
-		hPT_KAON[ichg][0]->Divide(hPT_PION[ichg][0]);
-		hPT_KAON[ichg][0]->SetLineColor(ichg+1);
-		hPT_KAON[ichg][0]->SetLineWidth(4);
-	}
 
 	for (int iarm=0; iarm<2; iarm++){
 		for (int igap=0; igap<2; igap++){
@@ -384,8 +371,13 @@ void Draw_Kpi_pp(){
 	htmp->GetYaxis()->SetLabelSize(24);
 	htmp->GetYaxis()->SetTitleSize(32);
 
-	hPT_KAON[0][0]->Draw("same");
-	hPT_KAON[1][0]->Draw("same");
+	for (int iarm=1; iarm<2; iarm++){
+		for (int ichg=0; ichg<2; ichg++){
+			hPT_KPI[iarm][ichg]->SetLineWidth(4);
+			hPT_KPI[iarm][ichg]->SetLineColor(ichg+1);
+			hPT_KPI[iarm][ichg]->Draw("same");
+		}
+	}
 
 	greco_ratio[0]->Draw("c 3");
 	greco_ratio[1]->Draw("c 3");
@@ -393,9 +385,9 @@ void Draw_Kpi_pp(){
 	TLegend *leg = new TLegend(0.5,0.6,0.95,0.9);
 	leg->SetFillStyle(0);
 	leg->SetBorderSize(0);
-	leg->AddEntry("","Simulation for p+p","h");
-	leg->AddEntry(hPT_KAON[0][0],"Generation, K^{-}/#pi^{-}","L");
-	leg->AddEntry(hPT_KAON[1][0],"Generation, K^{+}/#pi^{+}","L");
+	leg->AddEntry("","Simulation for p+Au","h");
+	leg->AddEntry(hPT_KPI[1][0],"Generation, K^{-}/#pi^{-}","L");
+	leg->AddEntry(hPT_KPI[1][1],"Generation, K^{+}/#pi^{+}","L");
 	leg->AddEntry(greco_ratio[0],"Reconstruction, K^{-}/#pi^{-}","LF");
 	leg->AddEntry(greco_ratio[1],"Reconstruction, K^{+}/#pi^{+}","LF");
 	leg->Draw();

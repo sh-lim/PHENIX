@@ -1,0 +1,128 @@
+R: --------------------------------------------------------------
+R: Report of the Referee -- CL10613/Adare
+R: --------------------------------------------------------------
+ 
+R: The authors report on J/Psi meson yields obtained in p+p, p+Al, p+Au,
+R: and He+Au collisions at the highest RHIC energy. The J/Psi are
+R: detected in the rapidity intervals -2.2<eta<-1.2 and 1.2<eta<2.4, and
+R: in the full pt range up to 6 GeV/c. The p+nucleus rapidity and pt
+R: spectra are categorized in centrality intervals and normalized to the
+R: spectra from p+p collisions resulting in rapidity and pt dependences
+R: of the nuclear modification factors R_AB (for p+Al, p+Au, and He+Au
+R: collisions). These factors play an important role in the
+R: interpretation of collective effects observed in nucleus-nucleus
+R: collisions. Therefore the presented data are an important contribution
+R: to the field and should be published. PRC is an appropriate journal in
+R: this respect.
+ 
+R: I have, however, questions and remarks which the authors may address
+R: before the manuscript is ready for publication. They are listed below
+R: in random order.
+ 
+R: 1. In lines 136-141 the authors say that p+p, p+Al, p+Au, and He+Au
+R: collisions have been studied .... also by Phenix. I guess that these
+R: enumerations apply to the past. Please distinguish clearly between
+R: previous data taking and analyses and the new data in this manuscript.
+ 
+R: 2. Refs [13,14] are cited but it is worth mentioning that they also
+R: address the nuclear modification factor.
+ 
+R: 3. Many data points in pt distributions at and above 6 GeV/c (mostly
+R: in the backward hemisphere) are significantly lower than the trend at
+R: lower pt suggests (e.g. Fig.17) Are these jumps considered to be due
+R: to physics?. This needs to be commented, Also please specify the bin
+R: size, if it is not constant. Are there empty pt bins in the p+A data
+R: (Figs. 26, 27, 28)? How did you compare p+p and p+A in those cases
+R: where the bin sizes are different?
+ 
+R: 4. Something is missing in the 2nd sentence of the introduction. Do
+R: you mean that the comparison of p+p with A+A (="hot nuclear matter")
+R: is hampered by cold nuclear matter effects.
+ 
+R: 5. Starting in line 212 it reads: "The events considered here are
+R: triggered by the dimuon trigger". But N_evt in equation 3 is probably
+R: obtained from the MB event ensemble. Is the (+- 30 cm) primary vertex
+R: cut also used for the MB events? Is N_evt in equation 3 corrected for
+R: the MB trigger efficiency given in line 201?
+ 
+R: 6. Line 220: do the "details of dimuon selection" in [39,40] include
+R: track cut parameter tuning?
+ 
+R: 7. Line 254: What is the range of efficiency changes with beam
+R: intensity?
+ 
+R: 8. Line 258: What is meant by "full" J/Psi events? J/Psi decays into
+R: mu-mu?
+ 
+R: 9. Line 259: with "Pythia event" you probably mean "Pythia J/Psi
+R: decay".
+ 
+R: 10. Fig.3: What are the approximate fractions of reconstruction and
+R: acceptance efficiencies? This relevant, because acceptance losses can
+R: be determined with high precision whereas reconstruction efficiency
+R: determination is more involved. Are these efficiencies centrality
+R: dependent? If so, please give the range.
+ 
+R: 11. In line 176 the dimuon acceptance is specified as 1.2<|eta|<2.4
+R: whereas everywhere else it is 1.2<|y|<2.2.
+ 
+R: 12. The sentence in line 182 seems to give only part of the argument.
+R: Why does it hurt to reduce acceptance? Maybe the efficiency would go
+R: up, if the FVTX information is used?
+ 
+R: 13. Line 256: J/Psi decays into dimuons ..
+ 
+R: 14. In line 279 Type A uncertainties are called random ...
+R: uncertainties. Are these the same as the uncorrelated uncertainties in
+R: line 343? What Type (A,B,C?) are the uncertainties of the BBC
+R: efficiencies (in Table 1)? The reader will appreciate, if the
+R: statistical and different kinds of systematic errors are uniquely
+R: categorized and labeled.
+ 
+R: 15. Line 342: should "because" be rather "since"?? And "J/Psi
+R: invariant yield per minimum bias collision".
+ 
+R: 16. Line 347: ... well understood in p+p interactions.
+ 
+R: 17. Figs. 8,14 are only mentioned but not commented in the text.
+ 
+R: 18. Line 381: "tighter" than what?
+ 
+R: 19. Line 383: energy scale dependence of what? Isn't mu_0 the
+R: transverse mass?
+ 
+R: 20. Lines 389,390: please give figure numbers.
+ 
+R: 21. Line 415: "curves" are NOT "transport models"
+ 
+R: 22. Lines 424, 425: Please quantify the "weak" and "strong"
+R: modifications mentioned here.
+ 
+R: 23. In the line count gap between 425,426: remaking => repeating
+ 
+R: 24. Lines 426,427: It is not obvious that the ratio in the backward
+R: hemisphere is less than unity with 90% probability. In Fig.17 the
+R: uncertainties for negative rapidities are given as "Fit: 0.89 ±
+R: 0.03(stats.) ±0.08(syst.)" instead of 0.05 for the systematic error in
+R: the text. Please clarify and eventually modify the conclusion (also in
+R: the summary). In fact the low value of the ratio is probably due
+R: entirely to the first and last points of the pt spectrum. Maybe their
+R: errors are underestimated? Please comment the large jumps of these
+R: points.
+ 
+R: 25. Line 429: ...Fig.18 for the three systems p+Al, p+Au, He3+Au.
+ 
+R: 26. Line 433: "effect of the transport model" is a shortcut. I suggest
+R: "result of transport model calculations". Also, please quantify the
+R: "underprediction" of the suppression.
+ 
+R: 27. It may help future comparison with theory, if basic data would be
+R: made available as numbers in tables. This is especially true for data
+R: shown in plots with logarithmic scales (in the appendix).
+ 
+R: 28. In Figs.4, 8 the last bin is missing in the ratio (out of scale).
+ 
+R: 29. Figs 23 , 24, 25 have wrong labels on the vertical scale.
+ 
+R: 30. The caption of Fig.2 reads: Invariant mass distributions of
+R: unlike-sign and like-sign dimuons in MB p+p and p+Au collisions in the

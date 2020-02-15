@@ -1,0 +1,62 @@
+ ===========================================================
+Re: CF10725
+    Nuclear-modification factor of charged hadrons at forward and backward
+    rapidity in p + Al and p + Au collisions at  sqrt s NN=200 GeV
+    by C. Aidala, Y. Akiba, M. Alfred, et al.
+
+===========================================================
+ 
+Dear Lin,
+
+We thank the referee for the positive evaluation of our manuscript and
+for the useful suggestion to improve clarity. Below are our responses
+to the referee concerns and some details on major changes. We also
+include a latexdiff "other" file ppg201diff01.pdf, which explicitly
+shows all changes made to text and captions.
+
+We trust that the revised manuscript is now acceptable for publication
+in Physical Review C.
+
+Sincerely, Brant (for the PHENIX Collaboration)
+
+================================ Responses to Referee concerns
+
+R: --------------------------------------------------------------
+R: Report of the Referee -- CF10725/Aidala
+R: --------------------------------------------------------------
+R:
+R: The manuscript presents PHENIX's measurements of nuclear effects on
+R: charged hadron production at forward and backward rapidity in p+Al
+R: and p+Au collisions at 200 GeV. Certain features of suppression and
+R: enhancement have been reported, based on the nuclear modification
+R: factor, and comparisons have been made between data and theoretical
+R: calculations. The measurements seem to be solid with various
+R: systematic checks, and the presentation is clear and well written.
+
+Thank you for your positive assessment of our manuscript and the useful
+suggestion below to improve the presentation.
+
+R: I only have one request about the interpretation of the data. Starting
+R: from Fig 7(b), enhancement and/or suppression have been mentioned
+R: frequently, but in some cases the systematic errors seem to prevent
+R: a definite conclusion, such as Fig 7(b).
+R:
+R: So I would like to ask the authors to add the discussion of the
+R: significance of enhancement or suppression in terms of sigma, for
+R: figures 7 and later, so that the readers have a more objective
+R: feeling.
+
+
+
+
+Thank you again for your positive review, comments, and suggestion to
+improve our manuscript.
+
+============================= additional changes requested by authors
+
+We added one author who had been inadvertently omitted earlier:
+
+	A. Khatiwada^
+
+===================================================== end of response
+

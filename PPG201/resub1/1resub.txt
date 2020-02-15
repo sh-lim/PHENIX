@@ -46,6 +46,13 @@ R: significance of enhancement or suppression in terms of sigma, for
 R: figures 7 and later, so that the readers have a more objective
 R: feeling.
 
+We present many figures of the nuclear modification factors as a function of pT
+and pseudo-rapidity in different centrality, and the nuclear modification
+clearly depends on pT, pesudo-rapidity, and centrality. Therefore, we think it
+will not be very information if add the significance of modification for every
+figures. We have added the significance of modification in summary for central
+p+Al and p+Au collisions where the modification is strongest among various
+centrality bins. 
 
 
 

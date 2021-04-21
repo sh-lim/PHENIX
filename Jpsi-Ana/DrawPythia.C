@@ -361,22 +361,32 @@ void DrawPythia(){
 		h1d_bbc_same[ii] = (TH1D*)infile->Get(Form("h1d_bbc_same_%d",ii)); 
 		h1d_bbc_oppo[ii] = (TH1D*)infile->Get(Form("h1d_bbc_oppo_%d",ii)); 
 
+		//h1d_fvtx_same[ii]->Rebin(2);
+		//h1d_fvtx_oppo[ii]->Rebin(2);
+		//h1d_svx[ii]->Rebin(2);
+		//h1d_bbc_same[ii]->Rebin(2);
+		//h1d_bbc_oppo[ii]->Rebin(2);
+
 		h1d_fvtx_same[ii]->Sumw2();
+		h1d_fvtx_oppo[ii]->Sumw2();
+		h1d_svx[ii]->Sumw2();
+		h1d_bbc_same[ii]->Sumw2();
+		h1d_bbc_oppo[ii]->Sumw2();
 
 	}
 
 	TCanvas *c3 = new TCanvas("c3","c3",1.1*500,500);
 
 	{
-		gPad->SetMargin(0.16,0.03,0.14,0.05);
+		gPad->SetMargin(0.18,0.03,0.14,0.05);
 
-		TH1D *htmp = (TH1D*)gPad->DrawFrame(0,0,20,0.1);
-		htmp->GetYaxis()->SetTitle("B_{ll}^{#psi(2S)}/B_{ll}^{J/#psi}");
+		TH1D *htmp = (TH1D*)gPad->DrawFrame(0,0,25,0.1);
+		htmp->GetYaxis()->SetTitle("B_{ll}^{#psi(2S)}N^{#psi(2S)}/B_{ll}^{J/#psi}N^{J/#psi}");
 		htmp->GetYaxis()->SetTitleSize(0.06);
-		htmp->GetYaxis()->SetLabelSize(0.05);
+		htmp->GetYaxis()->SetLabelSize(0.04);
 		htmp->GetXaxis()->SetTitle("N_{ch}");
 		htmp->GetXaxis()->SetTitleSize(0.06);
-		htmp->GetXaxis()->SetLabelSize(0.05);
+		htmp->GetXaxis()->SetLabelSize(0.04);
 
 		h1d_fvtx_same[1]->Divide(h1d_fvtx_same[0]);
 		h1d_fvtx_oppo[1]->Divide(h1d_fvtx_oppo[0]);
@@ -385,13 +395,71 @@ void DrawPythia(){
 		h1d_fvtx_same[1]->SetMarkerStyle(24);
 		h1d_fvtx_same[1]->SetMarkerColor(1);
 		h1d_fvtx_same[1]->SetLineColor(1);
+		h1d_fvtx_same[1]->SetLineWidth(2);
 		h1d_fvtx_same[1]->Draw("p same");
 
 		h1d_fvtx_oppo[1]->SetMarkerStyle(24);
 		h1d_fvtx_oppo[1]->SetMarkerColor(2);
 		h1d_fvtx_oppo[1]->SetLineColor(2);
+		h1d_fvtx_oppo[1]->SetLineWidth(2);
 		h1d_fvtx_oppo[1]->Draw("p same");
+
+		h1d_svx[1]->SetMarkerStyle(25);
+		h1d_svx[1]->SetMarkerColor(4);
+		h1d_svx[1]->SetLineColor(4);
+		h1d_svx[1]->SetLineWidth(2);
+		h1d_svx[1]->Draw("p same");
+
+		TLegend *leg = new TLegend(0.2,0.7,0.5,0.93);
+		leg->SetFillStyle(0);
+		leg->SetTextSize(0.04);
+		leg->SetBorderSize(0);
+		leg->AddEntry("","PYTHIA8 pp 200 GeV","h");
+		leg->AddEntry("","1.2<y^{J/#psi}<2.2","h");
+		leg->AddEntry(h1d_fvtx_same[1],"N_{ch} 1.2<#eta<2.6","p");
+		leg->AddEntry(h1d_fvtx_oppo[1],"N_{ch} -2.6<#eta<-1.2","p");
+		leg->AddEntry(h1d_svx[1],"N_{ch} |#eta|<1.0","p");
+		leg->Draw();
 	}
 		
+	TCanvas *c4 = new TCanvas("c4","c4",1.1*500,500);
+
+	{
+		gPad->SetMargin(0.18,0.03,0.14,0.05);
+
+		TH1D *htmp = (TH1D*)gPad->DrawFrame(0,0,15,0.1);
+		htmp->GetYaxis()->SetTitle("B_{ll}^{#psi(2S)}N^{#psi(2S)}/B_{ll}^{J/#psi}N^{J/#psi}");
+		htmp->GetYaxis()->SetTitleSize(0.06);
+		htmp->GetYaxis()->SetLabelSize(0.04);
+		htmp->GetXaxis()->SetTitle("N_{ch}");
+		htmp->GetXaxis()->SetTitleSize(0.06);
+		htmp->GetXaxis()->SetLabelSize(0.04);
+
+		h1d_bbc_same[1]->Divide(h1d_bbc_same[0]);
+		h1d_bbc_oppo[1]->Divide(h1d_bbc_oppo[0]);
+
+		h1d_bbc_same[1]->SetMarkerStyle(26);
+		h1d_bbc_same[1]->SetMarkerColor(kGreen+2);
+		h1d_bbc_same[1]->SetLineColor(kGreen+2);
+		h1d_bbc_same[1]->SetLineWidth(2);
+		h1d_bbc_same[1]->Draw("p same");
+
+		h1d_bbc_oppo[1]->SetMarkerStyle(26);
+		h1d_bbc_oppo[1]->SetMarkerColor(6);
+		h1d_bbc_oppo[1]->SetLineColor(6);
+		h1d_bbc_oppo[1]->SetLineWidth(2);
+		h1d_bbc_oppo[1]->Draw("p same");
+
+		TLegend *leg = new TLegend(0.2,0.7,0.5,0.93);
+		leg->SetFillStyle(0);
+		leg->SetTextSize(0.04);
+		leg->SetBorderSize(0);
+		leg->AddEntry("","PYTHIA8 pp 200 GeV","h");
+		leg->AddEntry("","1.2<y^{J/#psi}<2.2","h");
+		leg->AddEntry(h1d_bbc_same[1],"N_{ch} 3.1<#eta<3.9","p");
+		leg->AddEntry(h1d_bbc_oppo[1],"N_{ch} -3.9<#eta<-3.1","p");
+		leg->AddEntry("","","");
+		leg->Draw();
+	}
 
 }

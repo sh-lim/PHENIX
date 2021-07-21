@@ -417,8 +417,15 @@ void filter_hadron_fvtx_pp(string dataset="Run15pp200", string trigger="MB", boo
 		float cut_dphi_fvtx_tight = 0.5*cut_dphi_fvtx;
 		float cut_dtheta_fvtx_tight = 0.5*cut_dtheta_fvtx;
 
-		float w_trigeff_pT = ftrig_pT[_arm][_lastgap-2]->Eval(_pT); 
-		float w_trigeff_eta = htrig_eta[_arm][_lastgap-2]->GetBinContent(htrig_eta[_arm][_lastgap-2]->FindBin(fabs(_eta)));
+		float w_trigeff_pT = 1.0;
+		float w_trigeff_eta = 1.0;
+		float w_trigeff_all = 1.0;
+
+		if ( trigger=="MU" ){
+			w_trigeff_pT = ftrig_pT[_arm][_lastgap-2]->Eval(_pT); 
+			w_trigeff_eta = htrig_eta[_arm][_lastgap-2]->GetBinContent(htrig_eta[_arm][_lastgap-2]->FindBin(fabs(_eta)));
+			w_trigeff_all = w_trigeff_eta * w_trigeff_pT / ftrig_pT[_arm][_lastgap-2]->Eval(2.5);
+		}
 
 		if ( fabs(_dphi_fvtx)>cut_dphi_fvtx_loose ) continue;
 		if ( fabs(_dtheta_fvtx)>cut_dtheta_fvtx_loose ) continue;
@@ -428,8 +435,6 @@ void filter_hadron_fvtx_pp(string dataset="Run15pp200", string trigger="MB", boo
 
 		if ( fabs(_dphi_fvtx)>cut_dphi_fvtx ) continue;
 		if ( fabs(_dtheta_fvtx)>cut_dtheta_fvtx ) continue;
-
-		float w_trigeff_all = w_trigeff_eta * w_trigeff_pT / ftrig_pT[_arm][_lastgap-2]->Eval(2.5);
 
 		hPT_ETA[_arm][_lastgap-2][_charge]->Fill(_pT, fabs(_eta));
 		hPT_ETA_cor_pT[_arm][_lastgap-2][_charge]->Fill(_pT, fabs(_eta), 1./w_trigeff_pT);
